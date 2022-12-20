@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>CRUDS SYSTEM</title>
+  </head>
+
+  <body>
+    <div class="crud container">
+      <div class="row">
+        <div class="head mx-2 text-center text-uppercase my-2">
+          <h2>CRUDS</h2>
+          <p>PRODUCT MANAGEMENT SYSTEM</p>
+        </div>
+        <div class="inputs">
+          <input
+            class="form-control bg-dark text-white my-2 mx-1"
+            type="text"
+            id="title"
+            placeholder="Title"
+          />
+          <div class="price d-md-flex">
+            <input
+              onkeyup="getTotal()"
+              class="form-control bg-dark text-white my-2 mx-1"
+              type="number"
+              id="price"
+              placeholder="Price"
+            />
+            <input
+              onkeyup="getTotal()"
+              class="form-control bg-dark text-white my-2 mx-1"
+              type="number"
+              id="taxes"
+              placeholder="Taxes"
+            />
+            <input
+              onkeyup="getTotal()"
+              class="form-control bg-dark text-white my-2 mx-1"
+              type="number"
+              id="ads"
+              placeholder="Ads"
+            />
+            <input
+              onkeyup="getTotal()"
+              class="form-control bg-dark text-white my-2 mx-1"
+              type="number"
+              id="discount"
+              placeholder="Discount"
+            />
+            <small
+              class="border rounded-2 bg-danger p-2 w-25 my-2 mx-3"
+              id="total"
+            ></small>
+          </div>
+          <input
+            class="form-control bg-dark text-white my-2 mx-1"
+            type="number"
+            id="count"
+            placeholder="Count"
+          />
+          <input
+            class="form-control bg-dark text-white my-2 mx-1"
+            type="text"
+            id="category"
+            placeholder="Category"
+          />
+          <button class="btn btn-primary w-100 mx-1" id="submit">Create</button>
+        </div>
+        <div class="outputs">
+          <div class="searchBlock">
+            <input
+              onkeyup="searchDate(this.value)"
+              class="form-control bg-dark text-white my-2 mx-1"
+              type="text"
+              id="search"
+              placeholder="Search"
+            />
+            <div class="btnSearch d-md-flex">
+              <button
+                onclick="getSearchMood(this.id)"
+                class="btn btn-primary w-100 mx-1 my-2"
+                id="searchTitle"
+              >
+                Search By Title
+              </button>
+              <button
+                onclick="getSearchMood(this.id)"
+                class="btn btn-primary w-100 mx-1 my-2"
+                id="searchCategory"
+              >
+                Search By Category
+              </button>
+            </div>
+          </div>
+          <div id="deleteAll"></div>
+
+          <table class="table table-striped text-white my-3 btn-success">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Price</th>
+                <th scope="col">Taxes</th>
+                <th scope="col">Ads</th>
+                <th scope="col">Discount</th>
+                <th scope="col">Total</th>
+                <th scope="col">Category</th>
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody id="tbody">
+              <!-- <button class="btn btn-success">Update</button> -->
+              <!-- <button class="btn btn-danger">Delete</button> -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
